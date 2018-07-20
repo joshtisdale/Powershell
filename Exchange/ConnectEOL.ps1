@@ -10,3 +10,4 @@ $EOLSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri
 
 #Import the session from the variable
 Import-PSSession -Session $EOLSession
+
