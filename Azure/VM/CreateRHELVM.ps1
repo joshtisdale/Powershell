@@ -32,7 +32,7 @@ $nic = New-AzureRmNetworkInterface -ResourceGroupName $resourceGroup -Location $
 
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_E4s_v3 | `
-Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication | `
+Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred | `
 Set-AzureRmVMSourceImage -PublisherName RedHat -Offer RHEL -Skus 6.9 -Version latest | `
 Add-AzureRmVMNetworkInterface -Id $nic.Id
 
