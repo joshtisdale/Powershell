@@ -9,7 +9,7 @@ $time = (Get-Date).Adddays(-($DaysInactive))
 Get-ADUser -Filter {LastLogonTimeStamp -lt $time} -Server $domain -Properties LastLogonTimeStamp | 
   
 # Output hostname and lastLogonTimestamp 
-select-object Name,@{Name="Stamp"; Expression={[DateTime]::FromFileTime($_.lastLogonTimestamp)}} | 
+select-object Name,@{Name="Stamp"; Expression={[DateTime]::FromFileTime($_.lastLogonTimestamp)}}  
 
 #Get the count of items. Comment out to get hostnames.
-Measure
+#Measure
